@@ -17,14 +17,22 @@ class TestSensors(unittest.TestCase):
     def test_check_limits1(self):
         limits = [16, 16]
         result = sensors_main.check_limits(limits)
-        self.assertTrue(result, True)
+        self.assertTrue(result, False)
     
     # Test case test_check_limits2 (UT2) that tests the check_limits
     # with incorrect inputs (lower limit 22 and higher limit 18) and
     # expects the method to return False, since the limits are
     # incorrect.
     def test_check_limits2(self):
-        pass
+        limits = [17, 20]
+        result = sensors_main.check_limits(limits)
+        self.assertTrue(result, True)
+        # TODO: implement the actual test case code
+
+    def test_check_limits3(self):
+        limits = [20, 19]
+        result = sensors_main.check_limits(limits)
+        self.assertTrue(result, False)
         # TODO: implement the actual test case code
     
     # TODO: Implement Test case test_check_limits3 (UT3) according to your
