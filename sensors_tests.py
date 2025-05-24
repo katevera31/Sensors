@@ -10,37 +10,36 @@ class TestSensors(unittest.TestCase):
     # Unit test cases #
     ###################
 
-    # Test case test_check_limits1 (UT1) that tests the check_limits
-    # with correct inputs (lower limit 18 and higher limit 22) and
-    # expects the method to return True, since the limits are
-    # correct.
+    # Test case test_check_limits1 (UT3) that tests the check_limits
+    # with correct inputs (lower limit 16 and higher limit 16) and
+    # expects the method to return False, since the limits are
+    # incorrect.
     #UT3
     def test_check_limits1(self):
         limits = [16, 16]
         result = sensors_main.check_limits(limits)
         self.assertTrue(result, False)
     
-    # Test case test_check_limits2 (UT2) that tests the check_limits
-    # with incorrect inputs (lower limit 22 and higher limit 18) and
-    # expects the method to return False, since the limits are
-    # incorrect.
-
+    # Test case test_check_limits2 (UT4) that tests the check_limits
+    # with incorrect inputs (lower limit 17 and higher limit 20) and
+    # expects the method to return True, since the limits are
+    # correct.
     #UT4
     def test_check_limits2(self):
         limits = [17, 20]
         result = sensors_main.check_limits(limits)
         self.assertTrue(result, True)
-        # TODO: implement the actual test case code
 
+    #UT5
+    # Test case test_check_limits1 (UT5) that tests the check_limits
+    # with correct inputs (lower limit 20 and higher limit 19) and
+    # expects the method to return False, since the limits are
+    # incorrect.
     #UT5
     def test_check_limits3(self):
         limits = [20, 19]
         result = sensors_main.check_limits(limits)
         self.assertTrue(result, False)
-        # TODO: implement the actual test case code
-    
-    # TODO: Implement Test case test_check_limits3 (UT3) according to your
-    # plan here. 
 
     ##########################
     # Integration test cases #
